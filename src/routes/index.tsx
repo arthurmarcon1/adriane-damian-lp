@@ -1,16 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { PracticeAreas } from "@/components/PracticeAreas";
+import { About } from "@/components/About";
 
 export const Route = createFileRoute("/")({
-  component: Hero,
+  component: Index,
   head: () => ({
     meta: [
       { title: "Adriane Damian Pereira · Advocacia · OAB/RS 39.833" },
       {
         name: "description",
         content:
-          "Adriane Damian Pereira — Advocacia em Santiago, RS. OAB/RS 39.833.",
+          "Advocacia em Santiago/RS desde 1996. Atuação em Direito Civil, Criminal e Empresarial. OAB/RS 39.833.",
       },
     ],
   }),
 });
+
+function Index() {
+  return (
+    <main className="bg-bg-primary text-ink-primary">
+      <Header />
+      <Hero />
+      <PracticeAreas />
+      <About />
+    </main>
+  );
+}
