@@ -29,6 +29,10 @@ function Index() {
       <Hero />
       <PracticeAreas />
       <About />
+      <Principles />
+      <div id="faq"><Faq /></div>
+      <Contact />
+      <Footer />
     </main>
   );
 }
