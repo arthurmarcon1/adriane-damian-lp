@@ -12,7 +12,7 @@ export function Header() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 h-[72px] bg-bg-primary/95 border-b border-rule-line">
       <div className="h-full px-8 md:px-16 flex items-center justify-between">
-        <a href="#" className="font-serif font-medium tracking-tight text-green-deep text-lg md:text-xl">
+        <a href="#" className="font-serif font-medium tracking-tight text-graphite-deep text-lg md:text-xl">
           Adriane Damian Pereira
         </a>
 
@@ -21,7 +21,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="font-sans font-normal text-sm tracking-wide text-ink-primary hover:text-green-deep transition-colors"
+              className="font-sans font-normal text-sm tracking-wide text-ink-primary hover:text-graphite-deep transition-colors"
             >
               {l.label}
             </a>
@@ -48,7 +48,7 @@ export function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="font-sans text-base tracking-wide text-ink-primary hover:text-green-deep"
+                className="font-sans text-base tracking-wide text-ink-primary hover:text-graphite-deep"
               >
                 {l.label}
               </a>

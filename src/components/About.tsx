@@ -12,7 +12,7 @@ export function About() {
         {/* Left — image */}
         <div className="md:col-span-5">
           <div className="mb-6">
-            <div className="font-serif font-normal text-4xl text-gold-accent leading-none">II.</div>
+            <div className="font-serif font-normal text-4xl text-gold-champagne leading-none">II.</div>
             <div className="font-sans italic text-xs text-ink-soft mt-1">Trajetória</div>
           </div>
           <div className="aspect-[3/4] w-full overflow-hidden">
@@ -27,13 +27,13 @@ export function About() {
 
         {/* Right — text */}
         <div className="md:col-span-7 md:pl-4 lg:pl-12">
-          <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-accent mb-6">
+          <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-6">
             Sobre
           </p>
-          <h2 className="font-serif font-normal text-green-deep text-4xl md:text-5xl tracking-tight leading-tight mb-10">
+          <h2 className="font-serif font-normal text-graphite-deep text-4xl md:text-5xl tracking-tight leading-tight mb-10">
             Quase trinta anos dedicados ao Direito.
           </h2>
-          <hr className="w-10 h-px border-0 border-t border-gold-accent mb-10" />
+          <hr className="w-10 h-px border-0 border-t border-gold-champagne mb-10" />
 
           <div className="space-y-5 font-sans font-light text-base text-ink-primary leading-relaxed">
             <p>
@@ -59,7 +59,7 @@ export function About() {
           <dl className="mt-12 grid grid-cols-2 gap-x-12 gap-y-6">
             {credentials.map((c) => (
               <div key={c.label}>
-                <dt className="font-serif font-normal text-2xl text-gold-accent leading-none">
+                <dt className="font-serif font-normal text-2xl text-gold-champagne leading-none">
                   {c.value}
                 </dt>
                 <dd className="mt-1 font-sans text-xs uppercase tracking-[0.2em] text-ink-soft">
