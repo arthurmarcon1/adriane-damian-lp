@@ -11,9 +11,9 @@
   --color-bg-secondary: var(--bg-secondary);
   --color-ink-primary: var(--ink-primary);
   --color-ink-soft: var(--ink-soft);
-  --color-green-deep: var(--green-deep);
-  --color-green-darker: var(--green-darker);
-  --color-gold-accent: var(--gold-accent);
+  --color-graphite-deep: var(--graphite-deep);
+  --color-graphite-darker: var(--graphite-darker);
+  --color-gold-champagne: var(--gold-champagne);
   --color-rule-line: var(--rule-line);
 
   --font-serif: "Cormorant Garamond", serif;
@@ -26,12 +26,12 @@
 
 :root {
   --bg-primary: #F7F4ED;
-  --bg-secondary: #F1ECE0;
+  --bg-secondary: #EFEAE0;
   --ink-primary: #1A1A1A;
   --ink-soft: #4A4A4A;
-  --green-deep: #1F3A2E;
-  --green-darker: #142821;
-  --gold-accent: #A88A3D;
+  --graphite-deep: #3A4550;
+  --graphite-darker: #2A333C;
+  --gold-champagne: #B8985A;
   --rule-line: #C9C0AE;
 }
 
