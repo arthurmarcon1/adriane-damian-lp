@@ -2,7 +2,7 @@ const pillars = [
   {
     n: "01",
     title: "Experiência consolidada",
-    desc: "Quase três décadas de atuação em fóruns gaúchos. Mais de 1.900 processos acompanhados, com vivência prática em cada estágio do procedimento judicial e extrajudicial.",
+    desc: "Atuação contínua em fóruns gaúchos desde 1996. Mais de 1.900 processos acompanhados, com prática consolidada em todas as etapas do procedimento judicial e extrajudicial.",
   },
   {
     n: "02",
@@ -12,7 +12,7 @@ const pillars = [
   {
     n: "03",
     title: "Ética profissional",
-    desc: "Atuação pautada pelo Código de Ética da OAB e por princípios de transparência absoluta. Compromisso institucional demonstrado em cargos eletivos na Subseção Santiago/Jaguari.",
+    desc: "Atuação pautada pelo Código de Ética da OAB e por princípios de transparência. Engajamento institucional demonstrado em cargos eletivos na Subseção Santiago/Jaguari.",
   },
   {
     n: "04",
