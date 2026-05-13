@@ -2,7 +2,7 @@ const pillars = [
   {
     n: "01",
     title: "Experiência consolidada",
-    desc: "Quase três décadas de atuação em fóruns gaúchos. Mais de 1.900 processos acompanhados, com vivência prática em cada estágio do procedimento judicial e extrajudicial.",
+    desc: "Atuação contínua em fóruns gaúchos desde 1996. Mais de 1.900 processos acompanhados, com prática consolidada em todas as etapas do procedimento judicial e extrajudicial.",
   },
   {
     n: "02",
@@ -12,7 +12,7 @@ const pillars = [
   {
     n: "03",
     title: "Ética profissional",
-    desc: "Atuação pautada pelo Código de Ética da OAB e por princípios de transparência absoluta. Compromisso institucional demonstrado em cargos eletivos na Subseção Santiago/Jaguari.",
+    desc: "Atuação pautada pelo Código de Ética da OAB e por princípios de transparência. Engajamento institucional demonstrado em cargos eletivos na Subseção Santiago/Jaguari.",
   },
   {
     n: "04",
@@ -21,9 +21,12 @@ const pillars = [
   },
 ];
 
+import { useReveal } from "@/hooks/useReveal";
+
 export function Principles() {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section className="bg-bg-secondary py-20 md:py-32">
+    <section ref={ref} className="reveal bg-bg-secondary py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16">
         <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-6">
           Princípios
@@ -34,7 +37,10 @@ export function Principles() {
 
         <div className="grid md:grid-cols-2 gap-px bg-rule-line">
           {pillars.map((p) => (
-            <article key={p.n} className="bg-bg-secondary p-10 md:p-12">
+            <article
+              key={p.n}
+              className="bg-bg-secondary p-10 md:p-12 transition-all duration-300 hover:-translate-y-0.5"
+            >
               <div className="font-serif font-normal text-5xl text-gold-champagne mb-6 leading-none">
                 {p.n}
               </div>

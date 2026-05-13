@@ -23,11 +23,14 @@ const faqs = [
   },
 ];
 
+import { useReveal } from "@/hooks/useReveal";
+
 export function Faq() {
   const [open, setOpen] = useState<number | null>(0);
+  const ref = useReveal<HTMLElement>();
 
   return (
-    <section className="bg-bg-primary py-20 md:py-32">
+    <section ref={ref} className="reveal bg-bg-primary py-20 md:py-32">
       <div className="max-w-[800px] mx-auto px-8 md:px-12">
         <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-6">
           Dúvidas frequentes

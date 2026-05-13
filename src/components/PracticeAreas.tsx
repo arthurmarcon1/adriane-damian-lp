@@ -1,3 +1,5 @@
+import { useReveal } from "@/hooks/useReveal";
+
 const areas = [
   {
     n: "01",
@@ -16,20 +18,25 @@ const areas = [
   },
 ];
 
+
 export function PracticeAreas() {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section id="atuacao" className="bg-bg-secondary py-20 md:py-32">
+    <section ref={ref} id="atuacao" className="reveal bg-bg-secondary py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16">
         <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-6">
           Áreas de Atuação
         </p>
         <h2 className="font-serif font-normal text-graphite-deep text-4xl md:text-5xl tracking-tight leading-tight max-w-[700px] mb-20">
-          Três frentes de atuação, uma única exigência: excelência.
+          Três frentes de atuação, um mesmo método.
         </h2>
 
         <div className="grid md:grid-cols-3 gap-px bg-rule-line">
           {areas.map((a) => (
-            <article key={a.n} className="bg-bg-secondary p-10 md:p-12">
+            <article
+              key={a.n}
+              className="bg-bg-secondary p-10 md:p-12 transition-all duration-300 hover:-translate-y-0.5"
+            >
               <div className="font-serif font-normal text-5xl text-gold-champagne mb-8 leading-none">
                 {a.n}
               </div>

@@ -72,20 +72,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Adriane Damian Pereira | Advocacia em Santiago/RS" },
+      {
+        name: "description",
+        content:
+          "Advocacia em Direito Civil, Criminal e Empresarial. Atuação consolidada desde 1996. OAB/RS 39.833. Santiago, Rio Grande do Sul.",
+      },
+      { property: "og:title", content: "Adriane Damian Pereira | Advocacia em Santiago/RS" },
+      {
+        property: "og:description",
+        content:
+          "Advocacia em Direito Civil, Criminal e Empresarial. Atuação consolidada desde 1996. OAB/RS 39.833.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/png", href: "https://i.imgur.com/SUPELsk.png" },
     ],
   }),
   shellComponent: RootShell,
@@ -96,7 +99,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

@@ -1,13 +1,18 @@
+import { useReveal } from "@/hooks/useReveal";
+
+const ABOUT_PHOTO = "https://i.imgur.com/UInyKVW.png";
+
 const credentials = [
-  { value: "1996", label: "Inscrição na OAB/RS" },
+  { value: "OAB/RS", label: "Inscrita desde 1996" },
   { value: "1.900+", label: "Processos atuados" },
   { value: "M.Sc.", label: "Mestrado em Direito — UNISC" },
   { value: "23 anos", label: "De docência universitária" },
 ];
 
 export function About() {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section id="sobre" className="bg-bg-primary py-20 md:py-32">
+    <section ref={ref} id="sobre" className="reveal bg-bg-primary py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16 grid md:grid-cols-12 gap-12 md:gap-16 items-center">
         {/* Left — image */}
         <div className="md:col-span-5">
@@ -17,10 +22,10 @@ export function About() {
           </div>
           <div className="aspect-[3/4] w-full overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=900&q=80"
-              alt="Adriane Damian Pereira em sua trajetória profissional"
-              className="w-full h-full object-cover"
-              style={{ filter: "grayscale(10%) brightness(0.95)" }}
+              src={ABOUT_PHOTO}
+              alt="Adriane Damian Pereira em seu escritório"
+              className="w-full h-full object-cover object-center transition-[filter] duration-700"
+              style={{ filter: "grayscale(100%) contrast(1.08) brightness(0.96)" }}
             />
           </div>
         </div>
@@ -31,22 +36,22 @@ export function About() {
             Sobre
           </p>
           <h2 className="font-serif font-normal text-graphite-deep text-4xl md:text-5xl tracking-tight leading-tight mb-10">
-            Quase trinta anos dedicados ao Direito.
+            Formação sólida, prática consistente.
           </h2>
           <hr className="w-10 h-px border-0 border-t border-gold-champagne mb-10" />
 
           <div className="space-y-5 font-sans font-light text-base text-ink-primary leading-relaxed">
             <p>
-              Adriane Damian Pereira é advogada inscrita na OAB/RS desde 1996, com atuação
-              consolidada nas áreas Civil, Criminal e Empresarial. Sua trajetória combina
-              prática forense intensa e formação acadêmica de excelência.
+              Adriane Damian Pereira é advogada inscrita na OAB/RS, com atuação
+              consolidada nas áreas Civil, Criminal e Empresarial. Sua trajetória
+              reúne prática forense, formação acadêmica e engajamento institucional.
             </p>
             <p>
-              Mestra em Direito pela UNISC, com pesquisa em Direitos Sociais e Políticas
-              Públicas, dedicou mais de duas décadas ao magistério superior, tendo coordenado
-              o curso de Direito entre 2010 e 2018. Essa dupla vivência — sala de aula e
-              tribunal — moldou uma advocacia tecnicamente rigorosa e sensível ao contexto
-              humano de cada caso.
+              Mestra em Direito pela UNISC, com pesquisa em Direitos Sociais e
+              Políticas Públicas, atuou por mais de duas décadas no magistério
+              superior, tendo coordenado o curso de Direito entre 2010 e 2018.
+              Essa vivência entre sala de aula e tribunal moldou uma advocacia
+              tecnicamente cuidadosa e atenta ao contexto humano de cada caso.
             </p>
             <p>
               Atua também institucionalmente: integra a Subseção Santiago/Jaguari da OAB/RS,

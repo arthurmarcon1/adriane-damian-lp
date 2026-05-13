@@ -1,7 +1,9 @@
 import { useState, type FormEvent } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const ref = useReveal<HTMLElement>();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -16,7 +18,7 @@ export function Contact() {
     "w-full bg-transparent border-0 border-b border-bg-secondary/30 focus:border-gold-champagne focus:outline-none py-3 px-0 font-sans font-light text-base text-bg-primary placeholder:text-bg-secondary/50 rounded-none transition-colors";
 
   return (
-    <section id="contato" className="bg-graphite-deep py-20 md:py-32">
+    <section ref={ref} id="contato" className="reveal bg-graphite-deep py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16 grid md:grid-cols-12 gap-12 md:gap-16">
         {/* Left */}
         <div className="md:col-span-5">

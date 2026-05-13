@@ -36,6 +36,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   * {
     border-color: var(--rule-line);
   }
@@ -43,5 +46,14 @@
     background-color: var(--bg-primary);
     color: var(--ink-primary);
     font-family: var(--font-sans);
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+  .reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
