@@ -34,7 +34,10 @@ export function Principles() {
 
         <div className="grid md:grid-cols-2 gap-px bg-rule-line">
           {pillars.map((p) => (
-            <article key={p.n} className="bg-bg-secondary p-10 md:p-12">
+            <article
+              key={p.n}
+              className="bg-bg-secondary p-10 md:p-12 transition-all duration-300 hover:-translate-y-0.5"
+            >
               <div className="font-serif font-normal text-5xl text-gold-champagne mb-6 leading-none">
                 {p.n}
               </div>
