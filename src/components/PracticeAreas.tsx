@@ -16,9 +16,12 @@ const areas = [
   },
 ];
 
+import { useReveal } from "@/hooks/useReveal";
+
 export function PracticeAreas() {
+  const ref = useReveal<HTMLElement>();
   return (
-    <section ref={useReveal<HTMLElement>()} id="atuacao" className="reveal bg-bg-secondary py-20 md:py-32">
+    <section ref={ref} id="atuacao" className="reveal bg-bg-secondary py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16">
         <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-6">
           Áreas de Atuação
