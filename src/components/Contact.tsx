@@ -1,7 +1,9 @@
 import { useState, type FormEvent } from "react";
+import { useReveal } from "@/hooks/useReveal";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const ref = useReveal<HTMLElement>();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -14,7 +16,7 @@ export function Contact() {
     "block font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-2";
   const fieldCls =
     "w-full bg-transparent border-0 border-b border-bg-secondary/30 focus:border-gold-champagne focus:outline-none py-3 px-0 font-sans font-light text-base text-bg-primary placeholder:text-bg-secondary/50 rounded-none transition-colors";
-import { useReveal } from "@/hooks/useReveal";
+
 
   const ref = useReveal<HTMLElement>();
   return (
