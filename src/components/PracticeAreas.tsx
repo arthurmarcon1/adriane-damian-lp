@@ -18,7 +18,6 @@ const areas = [
   },
 ];
 
-import { useReveal } from "@/hooks/useReveal";
 
 export function PracticeAreas() {
   const ref = useReveal<HTMLElement>();
