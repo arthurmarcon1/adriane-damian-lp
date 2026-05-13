@@ -5,7 +5,7 @@ const navLinks = [
   { label: "Contato", href: "#contato" },
 ];
 
-const LOGO = "https://i.imgur.com/SUPELsk.png";
+const LOGO = "/logo-ad.png";
 
 export function Footer() {
   return (
@@ -16,7 +16,7 @@ export function Footer() {
             <img
               src={LOGO}
               alt="Logo AD — Adriane Damian Pereira"
-              className="h-10 w-auto object-contain opacity-90 mb-4"
+              className="h-12 w-auto object-contain opacity-90 mb-4"
             />
             <p className="font-serif font-medium text-2xl text-bg-primary mb-3">
               Adriane Damian Pereira

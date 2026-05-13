@@ -6,7 +6,7 @@ const links = [
   { label: "Contato", href: "#contato" },
 ];
 
-const LOGO = "https://i.imgur.com/SUPELsk.png";
+const LOGO = "/logo-ad.png";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,7 @@ export function Header() {
           <img
             src={LOGO}
             alt="Logo AD — Adriane Damian Pereira"
-            className="h-9 w-auto object-contain"
+            className="h-11 w-auto object-contain"
           />
           <span className="hidden md:flex items-center gap-3">
             <span className="block w-px h-5 bg-rule-line mx-2" />
