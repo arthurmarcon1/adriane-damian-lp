@@ -1,3 +1,5 @@
+import { useReveal } from "@/hooks/useReveal";
+
 const areas = [
   {
     n: "01",
