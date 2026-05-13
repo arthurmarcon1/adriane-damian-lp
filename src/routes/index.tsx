@@ -12,11 +12,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Adriane Damian Pereira · Advocacia · OAB/RS 39.833" },
+      { title: "Adriane Damian Pereira | Advocacia em Santiago/RS" },
       {
         name: "description",
         content:
-          "Advocacia em Santiago/RS desde 1996. Atuação em Direito Civil, Criminal e Empresarial. OAB/RS 39.833.",
+          "Advocacia em Direito Civil, Criminal e Empresarial. Atuação consolidada desde 1996. OAB/RS 39.833. Santiago, Rio Grande do Sul.",
       },
     ],
   }),
