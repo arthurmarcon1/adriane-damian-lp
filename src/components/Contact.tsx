@@ -17,8 +17,6 @@ export function Contact() {
   const fieldCls =
     "w-full bg-transparent border-0 border-b border-bg-secondary/30 focus:border-gold-champagne focus:outline-none py-3 px-0 font-sans font-light text-base text-bg-primary placeholder:text-bg-secondary/50 rounded-none transition-colors";
 
-
-  const ref = useReveal<HTMLElement>();
   return (
     <section ref={ref} id="contato" className="reveal bg-graphite-deep py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16 grid md:grid-cols-12 gap-12 md:gap-16">
