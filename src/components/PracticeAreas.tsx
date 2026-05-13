@@ -18,7 +18,7 @@ const areas = [
 
 export function PracticeAreas() {
   return (
-    <section id="atuacao" className="bg-bg-secondary py-20 md:py-32">
+    <section ref={useReveal<HTMLElement>()} id="atuacao" className="reveal bg-bg-secondary py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16">
         <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-6">
           Áreas de Atuação
