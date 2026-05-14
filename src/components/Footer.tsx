@@ -54,8 +54,8 @@ export function Footer() {
             </p>
             <ul className="space-y-3 font-sans font-light text-sm text-bg-primary">
               <li>(55) 99613-6663</li>
-              <li>Rua Benjamin Constant, 175, Lateral</li>
-              <li>Centro · Santiago/RS</li>
+              <li>Rua Tito Beccon, 217</li>
+              <li>Vila Nova · Santiago/RS</li>
               <li>OAB/RS 39.833</li>
             </ul>
           </div>
