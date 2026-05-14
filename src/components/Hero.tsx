@@ -13,7 +13,7 @@ export function Hero() {
           <img
             src={LOGO}
             alt="Logo AD — Adriane Damian Pereira"
-            className="h-16 w-auto object-contain mb-8"
+            className="h-20 w-auto object-contain mb-8"
           />
           <p className="font-sans font-medium text-xs uppercase tracking-[0.2em] text-gold-champagne mb-8">
             Advocacia · Desde 1996
