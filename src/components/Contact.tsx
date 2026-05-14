@@ -49,9 +49,9 @@ export function Contact() {
             <div>
               <p className={labelCls}>Escritório</p>
               <p className="font-serif font-normal text-xl md:text-2xl text-bg-primary mt-2 leading-snug">
-                Rua Benjamin Constant, 175, Lateral
+                Rua Tito Beccon, 217
                 <br />
-                Centro · Santiago/RS · CEP 97.700-375
+                Vila Nova · Santiago/RS · CEP 97.714-156
               </p>
             </div>
             <div>
