@@ -18,7 +18,7 @@ export function Header() {
           <img
             src={LOGO}
             alt="Logo AD — Adriane Damian Pereira"
-            className="h-11 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
           <span className="hidden md:flex items-center gap-3">
             <span className="block w-px h-5 bg-rule-line mx-2" />

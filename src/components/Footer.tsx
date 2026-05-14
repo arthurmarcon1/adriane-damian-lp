@@ -16,7 +16,7 @@ export function Footer() {
             <img
               src={LOGO}
               alt="Logo AD — Adriane Damian Pereira"
-              className="h-12 w-auto object-contain opacity-90 mb-4"
+              className="h-16 w-auto object-contain opacity-90 mb-4"
             />
             <p className="font-serif font-medium text-2xl text-bg-primary mb-3">
               Adriane Damian Pereira
