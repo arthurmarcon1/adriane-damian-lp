@@ -20,9 +20,9 @@ export function Hero() {
           </p>
 
           <h1 className="font-serif font-normal text-graphite-deep text-5xl md:text-6xl lg:text-7xl tracking-tight leading-[1.05]">
-            Advocacia técnica,
+            Análise rigorosa,
             <br />
-            atendimento próximo.
+            decisão estratégica.
           </h1>
 
           <hr className="my-10 w-10 h-px border-0 border-t border-gold-champagne" />
