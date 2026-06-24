@@ -85,6 +85,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Advocacia em Direito Civil, Criminal e Empresarial. Atuação consolidada desde 1996. OAB/RS 39.833.",
       },
       { property: "og:type", content: "website" },
+      { name: "twitter:title", content: "Adriane Damian Pereira | Advocacia em Santiago/RS" },
+      { name: "description", content: "Landing page institucional para a advogada Adriane Damian Pereira, apresentando sua experiência e áreas de atuação." },
+      { property: "og:description", content: "Landing page institucional para a advogada Adriane Damian Pereira, apresentando sua experiência e áreas de atuação." },
+      { name: "twitter:description", content: "Landing page institucional para a advogada Adriane Damian Pereira, apresentando sua experiência e áreas de atuação." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a127df76-2d38-451b-b7f2-8c554da1c44e/id-preview-1b319745--729a49a1-5505-4749-b782-706f543bb346.lovable.app-1778793943351.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a127df76-2d38-451b-b7f2-8c554da1c44e/id-preview-1b319745--729a49a1-5505-4749-b782-706f543bb346.lovable.app-1778793943351.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
