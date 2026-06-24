@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const links = [
   { label: "Atuação", href: "#atuacao" },
@@ -10,15 +10,24 @@ const LOGO = "/logo-ad.png";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 h-[72px] bg-bg-primary/95 border-b border-rule-line">
+    <header
+      className={`fixed top-0 inset-x-0 z-50 h-18 bg-bg-primary/95 border-b border-rule-line transition-all duration-300 ${scrolled ? "header-scrolled border-rule-line/60" : ""}`}
+    >
       <div className="h-full px-8 md:px-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
           <img
             src={LOGO}
             alt="Logo AD — Adriane Damian Pereira"
-            className="h-16 w-auto object-contain"
+            className="h-14 w-auto object-contain transition-transform duration-300 hover:scale-105"
           />
           <span className="hidden md:flex items-center gap-3">
             <span className="block w-px h-5 bg-rule-line mx-2" />
@@ -33,7 +42,7 @@ export function Header() {
             <a
               key={l.href}
               href={l.href}
-              className="font-sans font-normal text-sm tracking-wide text-ink-primary hover:text-graphite-deep transition-colors duration-200"
+              className="nav-link font-sans font-normal text-sm tracking-wide text-ink-primary hover:text-graphite-deep transition-colors duration-200"
             >
               {l.label}
             </a>
@@ -44,23 +53,30 @@ export function Header() {
           aria-label="Abrir menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden flex flex-col gap-[5px] p-2"
+          className="md:hidden flex flex-col gap-1.25 p-2"
         >
-          <span className={`block h-px w-6 bg-ink-primary transition-transform ${open ? "translate-y-[6px] rotate-45" : ""}`} />
-          <span className={`block h-px w-6 bg-ink-primary transition-opacity ${open ? "opacity-0" : ""}`} />
-          <span className={`block h-px w-6 bg-ink-primary transition-transform ${open ? "-translate-y-[6px] -rotate-45" : ""}`} />
+          <span
+            className={`block h-px w-6 bg-ink-primary transition-all duration-300 ${open ? "translate-y-1.5 rotate-45" : ""}`}
+          />
+          <span
+            className={`block h-px w-6 bg-ink-primary transition-all duration-300 ${open ? "opacity-0 scale-x-0" : ""}`}
+          />
+          <span
+            className={`block h-px w-6 bg-ink-primary transition-all duration-300 ${open ? "-translate-y-1.5 -rotate-45" : ""}`}
+          />
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden fixed inset-0 top-[72px] bg-bg-primary">
-          <nav className="flex flex-col items-center justify-center gap-10 pt-24">
-            {links.map((l) => (
+        <div className="menu-slide md:hidden fixed inset-0 top-18 bg-bg-primary/98 backdrop-blur-sm">
+          <nav className="flex flex-col items-center justify-center gap-10 h-full">
+            {links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="font-sans text-base tracking-wide text-ink-primary hover:text-graphite-deep transition-colors duration-200"
+                className="font-serif font-normal text-3xl text-graphite-deep hover:text-gold-champagne transition-colors duration-200"
+                style={{ animationDelay: `${i * 80}ms` }}
               >
                 {l.label}
               </a>

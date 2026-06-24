@@ -31,13 +31,13 @@ export function PracticeAreas() {
           Três frentes de atuação, um mesmo método.
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-px bg-rule-line">
+        <div className="stagger-grid grid md:grid-cols-3 gap-px bg-rule-line">
           {areas.map((a) => (
             <article
               key={a.n}
-              className="bg-bg-secondary p-10 md:p-12 transition-all duration-300 hover:-translate-y-0.5"
+              className="card-lift bg-bg-secondary p-10 md:p-12"
             >
-              <div className="font-serif font-normal text-5xl text-gold-champagne mb-8 leading-none">
+              <div className="font-serif font-normal text-5xl text-gold-champagne mb-8 leading-none gold-hover cursor-default">
                 {a.n}
               </div>
               <hr className="w-[30px] h-px border-0 border-t border-graphite-deep mb-8" />

@@ -1,3 +1,5 @@
+import { useReveal } from "@/hooks/useReveal";
+
 const pillars = [
   {
     n: "01",
@@ -21,8 +23,6 @@ const pillars = [
   },
 ];
 
-import { useReveal } from "@/hooks/useReveal";
-
 export function Principles() {
   const ref = useReveal<HTMLElement>();
   return (
@@ -35,13 +35,13 @@ export function Principles() {
           O que sustenta uma advocacia de excelência.
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-px bg-rule-line">
+        <div className="stagger-grid grid md:grid-cols-2 gap-px bg-rule-line">
           {pillars.map((p) => (
             <article
               key={p.n}
-              className="bg-bg-secondary p-10 md:p-12 transition-all duration-300 hover:-translate-y-0.5"
+              className="card-lift bg-bg-secondary p-10 md:p-12"
             >
-              <div className="font-serif font-normal text-5xl text-gold-champagne mb-6 leading-none">
+              <div className="font-serif font-normal text-5xl text-gold-champagne mb-6 leading-none gold-hover cursor-default">
                 {p.n}
               </div>
               <hr className="w-[30px] h-px border-0 border-t border-graphite-deep mb-6" />

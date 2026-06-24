@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/useReveal";
+import { useEffect, useRef, useState } from "react";
 
 const ABOUT_PHOTO = "https://i.imgur.com/UInyKVW.png";
 
@@ -9,23 +10,75 @@ const credentials = [
   { value: "23 anos", label: "De docência universitária" },
 ];
 
+function useCountUp(target: number, enabled: boolean, duration = 1200) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!enabled) return;
+    let start: number | null = null;
+    const step = (ts: number) => {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [enabled, target, duration]);
+  return count;
+}
+
+function AnimatedCredential({ value, label, revealed }: { value: string; label: string; revealed: boolean }) {
+  const isNumber = /^\d/.test(value);
+  const numericTarget = isNumber ? parseInt(value.replace(/\D/g, ""), 10) : 0;
+  // Strip leading digits + formatting chars (dots/commas used as thousand separators)
+  const suffix = isNumber ? value.replace(/^[\d.,]+/, "") : "";
+  const count = useCountUp(numericTarget, revealed && isNumber);
+
+  return (
+    <div>
+      <dt className="font-serif font-normal text-2xl text-gold-champagne leading-none">
+        {isNumber ? `${count.toLocaleString("pt-BR")}${suffix}` : value}
+      </dt>
+      <dd className="mt-1 font-sans text-xs uppercase tracking-[0.2em] text-ink-soft">
+        {label}
+      </dd>
+    </div>
+  );
+}
+
 export function About() {
   const ref = useReveal<HTMLElement>();
+  const dlRef = useRef<HTMLDListElement>(null);
+  const [dlRevealed, setDlRevealed] = useState(false);
+
+  useEffect(() => {
+    const el = dlRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setDlRevealed(true); obs.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
     <section ref={ref} id="sobre" className="reveal bg-bg-primary py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-8 md:px-16 grid md:grid-cols-12 gap-12 md:gap-16 items-center">
         {/* Left — image */}
         <div className="md:col-span-5">
           <div className="mb-6">
-            <div className="font-serif font-normal text-4xl text-gold-champagne leading-none">II.</div>
+            <div className="font-serif font-normal text-4xl text-gold-champagne leading-none gold-hover cursor-default">II.</div>
             <div className="font-sans italic text-xs text-ink-soft mt-1">Trajetória</div>
           </div>
-          <div className="aspect-[3/4] w-full overflow-hidden">
+          <div className="aspect-3/4 w-full overflow-hidden group">
             <img
               src={ABOUT_PHOTO}
               alt="Adriane Damian Pereira em seu escritório"
-              className="w-full h-full object-cover object-center transition-[filter] duration-700"
+              className="w-full h-full object-cover object-center transition-[filter,transform] duration-700 group-hover:scale-[1.03]"
               style={{ filter: "grayscale(100%) contrast(1.08) brightness(0.96)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.filter = "grayscale(40%) contrast(1.08) brightness(0.96)")}
+              onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(100%) contrast(1.08) brightness(0.96)")}
             />
           </div>
         </div>
@@ -61,16 +114,17 @@ export function About() {
             </p>
           </div>
 
-          <dl className="mt-12 grid grid-cols-2 gap-x-12 gap-y-6">
+          <dl
+            ref={dlRef}
+            className="mt-12 grid grid-cols-2 gap-x-12 gap-y-6"
+          >
             {credentials.map((c) => (
-              <div key={c.label}>
-                <dt className="font-serif font-normal text-2xl text-gold-champagne leading-none">
-                  {c.value}
-                </dt>
-                <dd className="mt-1 font-sans text-xs uppercase tracking-[0.2em] text-ink-soft">
-                  {c.label}
-                </dd>
-              </div>
+              <AnimatedCredential
+                key={c.label}
+                value={c.value}
+                label={c.label}
+                revealed={dlRevealed}
+              />
             ))}
           </dl>
         </div>

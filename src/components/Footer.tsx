@@ -16,9 +16,9 @@ export function Footer() {
             <img
               src={LOGO}
               alt="Logo AD — Adriane Damian Pereira"
-              className="h-16 w-auto object-contain opacity-90 mb-4"
+              className="h-16 w-auto object-contain opacity-95 mb-4"
             />
-            <p className="font-serif font-medium text-2xl text-bg-primary mb-3">
+            <p className="font-serif font-medium text-2xl text-bg-primary mb-2">
               Adriane Damian Pereira
             </p>
             <p className="font-sans italic font-light text-sm text-bg-secondary/70 mb-6">
@@ -39,7 +39,7 @@ export function Footer() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="font-sans font-normal text-sm text-bg-primary hover:text-gold-champagne transition-colors"
+                    className="nav-link font-sans font-normal text-sm text-bg-primary hover:text-gold-champagne transition-colors"
                   >
                     {l.label}
                   </a>
@@ -53,7 +53,16 @@ export function Footer() {
               Contato
             </p>
             <ul className="space-y-3 font-sans font-light text-sm text-bg-primary">
-              <li>(55) 99613-6663</li>
+              <li>
+                <a
+                  href="https://wa.me/5555996136663"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-gold-champagne transition-colors"
+                >
+                  (55) 99613-6663
+                </a>
+              </li>
               <li>Rua Tito Beccon, 217</li>
               <li>Vila Nova · Santiago/RS</li>
               <li>OAB/RS 39.833</li>
